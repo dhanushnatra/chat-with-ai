@@ -1,0 +1,12 @@
+flask
+langchain-core
+langchain-ollama
+pyPDF2
+flask-cors
+numpy
+gTTS
+pygame
+docx
+SpeechRecognition
+sentence-transformers
+pyAudio
