@@ -267,150 +267,13 @@
             align-items: center;
             z-index: 1001;
         }
-        .voice-comm-container {
-            background-color: var(--bg-secondary);
-            border-radius: 30px;
-            padding: 30px;
-            text-align: center;
-            position: relative;
-            max-width: 400px;
-            width: 90%;
-        }
-        .voice-comm-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-        }
-        .voice-glow-ball {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(74,144,226,0.6), rgba(74,144,226,0.2));
-            margin: 0 auto;
-            box-shadow: 0 0 50px rgba(74,144,226,0.5);
-            animation: pulse 2s infinite alternate;
-        }
-        @keyframes pulse {
-            0% {
-                transform: scale(0.9);
-                box-shadow: 0 0 30px rgba(74,144,226,0.3);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 60px rgba(74,144,226,0.6);
-            }
-        }
-        .voice-text-display {
-            margin-top: 20px;
-            font-size: 1rem;
-            color: var(--text-secondary);
-            min-height: 40px;
-        }
-        .voice-text-display p {
-            margin-bottom: 5px;
-            word-wrap: break-word;
-        }
-        .voice-text-display p:first-child {
-            font-weight: bold;
-            color: var(--text-primary);
-        }
-        /* Camera Preview Styles */
-        .camera-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1001;
-        }
-        .camera-container {
-            position: relative;
-            background-color: var(--bg-secondary);
-            border-radius: 15px;
-            padding: 15px;
-            max-width: 600px;
-            width: 90%;
-            text-align: center;
-        }
-        .camera-preview {
-            border-radius: 10px;
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-        }
-        .camera-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-        }
-        .qr-scanner-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1002;
-        }
-        .qr-scanner-container {
-            position: relative;
-            background-color: var(--bg-secondary);
-            border-radius: 15px;
-            padding: 15px;
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-        }
-        .qr-scanner-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-        }
-        #qr-scanner-view {
-            width: 100%;
-            max-height: 400px;
-            object-fit: contain;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-        .qr-result-display {
-            margin-top: 10px;
-            font-size: 1rem;
-            color: var(--text-secondary);
-            word-wrap: break-word;
-        }
-        /* Responsive Design */
-        @media (max-width: 500px) {
-            .welcome-message {
-                font-size: 1.8rem;
-            }
-            .chat-input-container {
-                padding: 10px 10px;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="chat-container">
         <!-- Chat Header -->
         <div class="chat-header">
-            <div class="chat-title">My Max</div>
+            <div class="chat-title">Max</div>
             <div class="theme-switch" id="themeSwitch">
                 <div class="theme-switch-icon">🔅</div>
             </div>
@@ -426,17 +289,10 @@
 
         <!-- Chat Input Area -->
         <div class="chat-input-container">
-            <div class="chat-input">
-                <div class="input-icon" id="paperclipBtn"><i class="fas fa-paperclip"></i></div>
-                <div class="chat-input-wrapper">
+            <div class="chat-input"><div class="chat-input-wrapper">
                     <input type="text" placeholder="What's on your mind" id="chatInput">
                     <div class="input-icons">
-                        <span class="input-icon" id="micBtn"><i class="fas fa-microphone"></i></span>
                         <span class="input-icon" id="sendBtn"><i class="fas fa-arrow-right"></i></span>
-                        <span class="input-icon" id="scannerBtn" style="transform: translateY(0.1cm);">
-                            <svg width="20" height="20" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                                <path d="M496 64h-64l-18.6-37.2C395.1 14.5 379.3 0 361 0H151c-18.3 0-34.1 14.5-38.4 26.8L80 64H16C7.1 64 0 71.1 0 80v368c0 8.9 7.1 16 16 16h480c8.9 0 16-7.1 16-16V80c0-8.9-7.1-16-16-16zM112 112c0-26.5 21.5-48 48-48h240c26.5 0 48 21.5 48 48v48H112v-48zm384 336H32V192h448v256z"/>
-                            </svg>
                         </span>
                     </div>
                 </div>
@@ -444,45 +300,11 @@
         </div>
     </div>
 
-    <!-- Voice Communication Overlay -->
-    <div class="voice-comm-overlay" id="voiceCommOverlay">
-        <div class="voice-comm-container">
-            <div class="voice-comm-close" id="voiceCommClose"><i class="fas fa-times"></i></div>
-            <h2>Voice Communication</h2>
-            <div class="voice-glow-ball" id="voiceGlowBall"></div>
-            <div class="voice-text-display" id="voiceTextDisplay">
-                <p id="voiceInputText"></p>
-                <p id="voiceOutputText"></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Camera Preview Overlay -->
-    <div class="camera-overlay" id="cameraOverlay">
-        <div class="camera-container">
-            <div class="camera-close" id="cameraClose"><i class="fas fa-times"></i></div>
-            <video class="camera-preview" id="cameraPreview" autoplay></video>
-        </div>
-    </div>
-
-    <!-- QR Scanner Overlay -->
-    <div class="qr-scanner-overlay" id="qrScannerOverlay">
-        <div class="qr-scanner-container">
-            <div class="qr-scanner-close" id="qrScannerClose"><i class="fas fa-times"></i></div>
-            <h2>QR Code Scanner</h2>
-            <div id="qr-scanner-view"></div>
-            <p class="qr-result-display" id="qrResultDisplay"></p>
-        </div>
-    </div>
-
-    <input type="file" id="fileInput" style="display: none">
-
 <script>
     // Theme Switching
     const themeSwitch = document.getElementById('themeSwitch');
     const themeSwitchIcon = themeSwitch.querySelector('.theme-switch-icon');
     let isDarkMode = false;
-
     themeSwitchIcon.innerHTML = '🌙';
     themeSwitch.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
@@ -495,28 +317,8 @@
     const chatMessages = document.getElementById('chatMessages');
     const welcomeMessage = document.getElementById('welcomeMessage');
     const sendBtn = document.getElementById('sendBtn');
-    const paperclipBtn = document.getElementById('paperclipBtn');
-    const micBtn = document.getElementById('micBtn');
-    const voiceCommOverlay = document.getElementById('voiceCommOverlay');
-    const voiceCommClose = document.getElementById('voiceCommClose');
-    const voiceGlowBall = document.getElementById('voiceGlowBall');
-    const voiceInputTextDisplay = document.getElementById('voiceInputText');
-    const voiceOutputTextDisplay = document.getElementById('voiceOutputText');
-    const fileInput = document.getElementById('fileInput');
-    const scannerBtn = document.getElementById('scannerBtn');
-    const cameraOverlay = document.getElementById('cameraOverlay');
-    const cameraPreview = document.getElementById('cameraPreview');
-    const cameraClose = document.getElementById('cameraClose');
-    const qrScannerOverlay = document.getElementById('qrScannerOverlay');
-    const qrScannerView = document.getElementById('qr-scanner-view');
-    const qrScannerClose = document.getElementById('qrScannerClose');
-    const qrResultDisplay = document.getElementById('qrResultDisplay');
 
-    let ragMode = false;
-    let voiceMode = false;
-    let cameraActive = false;
-    let html5QrCode = null;
-    let qrScannerActive = false;
+   
 
     // Helper function for sending post requests
     const sendPostRequest = async (url, data) => {
@@ -586,211 +388,16 @@
 
     async function handleSendMessage() {
         const userInput = chatInput.value.trim();
-        if (userInput !== '') {
             addMessageBubble('user', userInput);
             clearChatInput();
             welcomeMessage.classList.add('fade-out');
-            if (ragMode) {
-                addTypingIndicator();
-                const response = await sendPostRequest('/rag_query', { question: userInput });
-                removeTypingIndicator();
-                if (response) {
-                    addMessageBubble('ai', response.response, response.document_name);
-                    if (userInput.toLowerCase() === "exit") {
-                        ragMode = false;
-                        addMessageBubble('ai', "Exiting Document RAG mode");
-                    }
-                }
-            } else if (voiceMode) {
-                addTypingIndicator();
-                const response = await sendPostRequest('/voice_chat', { message: userInput });
-                removeTypingIndicator();
-                if (response) {
-                    addMessageBubble('ai', response.response);
-                    if (userInput.toLowerCase() === "exit") {
-                        voiceMode = false;
-                        addMessageBubble('ai', "Exiting voice chat mode");
-                    }
-                }
-            } else {
                 addTypingIndicator();
                 const response = await sendPostRequest('/chat', { message: userInput });
                 removeTypingIndicator();
                 if (response) {
-                    addMessageBubble('ai', response.response);
+                    addMessageBubble('ai', response['response']);
                 }
             }
-        }
-    }
-
-    // Event listener for paperclip button to enter RAG mode
-    paperclipBtn.addEventListener('click', () => {
-        fileInput.click();
-        fileInput.onchange = async () => {
-            const file = fileInput.files[0];
-            if (file) {
-                const formData = new FormData();
-                formData.append('file', file);
-                addTypingIndicator();
-                const response = await fetch('/upload', {
-                    method: 'POST',
-                    body: formData,
-                });
-                removeTypingIndicator();
-                if (response.ok) {
-                    const data = await response.json();
-                    addMessageBubble('ai', `Uploaded document: ${data.filename}. You can now ask questions about the document.`);
-                    ragMode = true;
-                } else {
-                    const errorData = await response.json();
-                    addMessageBubble('ai', `Error: ${errorData.error}`);
-                }
-            }
-            fileInput.value = '';
-        }
-    });
-
-    // Event listener for the mic button
-    micBtn.addEventListener('click', async () => {
-        voiceCommOverlay.style.display = 'flex';
-        voiceMode = true;
-        await startVoiceChat();
-        startContinuousListening();
-    });
-
-    voiceCommClose.addEventListener('click', async () => {
-        voiceCommOverlay.style.display = 'none';
-        voiceMode = false;
-        await stopVoiceChat();
-    });
-
-    // Function to simulate voice interaction (replace with actual Web Speech API logic)
-    const startVoiceChat = async () => {
-        await sendPostRequest('/start_voice_chat');
-        voiceInputTextDisplay.textContent = "Listening...";
-        voiceOutputTextDisplay.textContent = "";
-        adjustGlowBall(1.2);
-    }
-
-    const stopVoiceChat = async () => {
-        await sendPostRequest('/stop_voice_chat');
-        voiceInputTextDisplay.textContent = '';
-        voiceOutputTextDisplay.textContent = '';
-        adjustGlowBall(1);
-    }
-
-    const startContinuousListening = async () => {
-        while (voiceMode) {
-            try {
-                const response = await sendPostRequest('/voice_chat_stream');
-                if (response && response.response) {
-                    voiceInputTextDisplay.textContent = `You said: ${response.response}`
-                    adjustGlowBall(0.8)
-                }
-                await new Promise(resolve => setTimeout(resolve, 100));
-            } catch (error) {
-                console.error("Error during voice communication", error);
-                break;
-            }
-        }
-    }
-
-    const adjustGlowBall = (sizeMultiplier) => {
-        const newSize = 200 * sizeMultiplier;
-        voiceGlowBall.style.width = `${newSize}px`;
-        voiceGlowBall.style.height = `${newSize}px`;
-        voiceGlowBall.style.boxShadow = `0 0 ${newSize * 0.25}px rgba(74,144,226,${sizeMultiplier * 0.5})`;
-    }
-
-    // Camera Preview functions
-    const startCamera = async () => {
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-            cameraPreview.srcObject = stream;
-            cameraActive = true;
-        } catch (error) {
-            console.error("Error accessing camera:", error);
-            alert("Could not access the camera.");
-        }
-    }
-
-    const stopCamera = async () => {
-        if (cameraPreview.srcObject) {
-            const tracks = cameraPreview.srcObject.getTracks();
-            tracks.forEach(track => track.stop());
-            cameraPreview.srcObject = null;
-        }
-        cameraActive = false;
-    }
-
-
-        // Function to setup QR code scanner
-        const startQrCodeScanner = () => {
-            qrScannerOverlay.style.display = "flex";
-            qrScannerActive = true;
-            html5QrCode = new Html5Qrcode("qr-scanner-view", {
-                fps: 10,
-                qrbox: 250
-            });
-
-            const onScanSuccess = (decodedText, decodedResult) => {
-                if (qrScannerActive) {
-                    try {
-                        window.open(decodedText, '_blank');
-                        qrResultDisplay.textContent = `Opened link: ${decodedText}`;
-                    } catch (error) {
-                        qrResultDisplay.textContent = `Failed to open link, please check the link and open it manually: ${decodedText}`;
-                    }
-                    stopQrCodeScanner();
-                }
-            };
-
-            const onScanFailure = (error) => {
-                if (qrScannerActive) {
-                    console.warn(`QR scan failed: ${error}`);
-                }
-            };
-
-            html5QrCode.start(
-                { facingMode: "environment" },
-                {
-                    qrbox: { width: 250, height: 250 },
-                    fps: 10,
-                },
-                onScanSuccess,
-                onScanFailure
-            );
-        };
-
-        const stopQrCodeScanner = () => {
-            if (html5QrCode) {
-                html5QrCode.stop().then(() => {
-                    html5QrCode.clear();
-                    qrScannerActive = false;
-                    qrScannerOverlay.style.display = 'none';
-                    html5QrCode = null;
-                }).catch((error) => {
-                    console.error("Error stopping QR scanner:", error);
-                });
-            }
-        };
-
-    // Event listener for the scanner button
-    scannerBtn.addEventListener('click', async () => {
-        startQrCodeScanner();
-    });
-
-    // Event listener for closing the QR code scanner by pressing the X button
-    qrScannerClose.addEventListener('click', () => {
-        stopQrCodeScanner();
-    });
-    
-    cameraClose.addEventListener('click', async () => {
-            cameraOverlay.style.display = 'none';
-            if (cameraActive) {
-                await stopCamera();
-            }
-        });
 
 </script>
 </body>
