@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="mainTitle">
+            <h1>Happi</h1>
+            <select id="modelSelect">
+            </select>
+        </div>  
+        <div class="messages" id="messages">
+            <div class="welcome-msg" id="welcome-msg" >
+                <img src="./happy.svg" alt="happy-character">
+                <p>Hi I am Happi.... Ask me anything...</p>
+            </div>
+        </div>
+        
+        <div class="inp">
+            <input type="text" id="userInp" placeholder="Ask Something..." autocomplete="off" autofocus="on">
+            <img src="./send.svg" alt="send-btn" id="sendBtn" onclick="sendMsg()">
+        </div>
+    </div>
+</body>
+<script src="./script.js" ></script>
+<script src="./marked.js"></script>
+</html>

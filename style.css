@@ -1,0 +1,141 @@
+:root{
+--bg-color:#202020;
+--text-color:rgb(211, 211, 211);
+--main-color:rgb(83, 83, 83);
+--text-size: 1.3rem;
+--wlcm-msg:1.7rem;
+--bg-color-alt:rgb(36, 36, 36);
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+}
+.mainTitle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+}
+.welcome-msg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.welcome-msg p{
+    font-size: var(--wlcm-msg);
+    width: 19vw;
+}
+.welcome-msg img{
+    width: 26vw;
+
+}
+
+#modelSelect{
+    background-color: var(--main-color);
+    color: var(--text-color);
+    font-size: var(--text-size);
+    padding: 1vh;
+    margin-bottom: 1vh;
+    border-radius: 1vh;
+    border: none;
+    outline: none;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.messages{
+    background-color: var(--bg-color-alt);
+    height: 80vh;
+    overflow-y: auto;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    padding : 10px;
+}
+.messages .user{
+    background-color:var(--main-color);
+    align-self: flex-end;
+    margin: 5px;
+    font-size: var(--text-size);
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+.messages .assistant{
+    align-self: flex-start;
+    width: 80vw;
+    font-size: var(--text-size);
+    padding-left: 3vw;
+    padding-top: 3vh;
+    margin: 5vh;
+}
+.inp{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.inp input{
+    text-decoration: none;
+    outline: none;
+    background-color: var(--main-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    height: 5vh;
+    width: 50vw;
+}
+.inp {
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    align-self: center;
+    display: block;
+    padding: 10px;
+}
+.inp input {
+    border: none;
+    outline: none;
+    padding: 1vh 2vh;
+    border-radius: 1vh;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    font-size: var(--text-size);
+}
+
+
+
+.inp img {
+    width: 5vh;
+    height: 5vh;
+    align-self: center;
+    cursor: pointer;
+    position: absolute;
+    right: 2vw;
+    bottom: 2vh;
+    
+}
+.loading{
+animation: spin 1s linear infinite;
+}
+h1{
+    text-align: center;
+    color:rgb(32, 177, 235);
+}
+.inp input:focus{
+    outline: white;
+}
+.inp input::placeholder{
+    color: var(--text-color);
+}
+.inp img:hover{
+    transform: scale(1.2);
+}
+
+.inp img:active {
+    animation: flyRandom 5s infinite ease-in-out;
+}
